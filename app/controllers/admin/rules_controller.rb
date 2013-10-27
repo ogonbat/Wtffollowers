@@ -60,6 +60,7 @@ class Admin::RulesController < ApplicationController
           end
         end
       end
+      puts final_rule
       render json: {result: true, data: final_rule}
     else
       render json: {result: false}
