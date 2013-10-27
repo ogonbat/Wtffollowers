@@ -84,7 +84,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
                 $scope.scanningStatus = "icon-pause icon-2x";
                 $scope.scanningMessage = "Waiting Motion";
             }, 3000);
-            if($scope.makingCall === false){
+            if($scope.makingCall == false){
                 $scope.makingCall = true;
                 $http.post('/admin/panel/scanner',{params:{photo:$scope.image_scanner}}).success(function(data){
                     if (data.result == true){
