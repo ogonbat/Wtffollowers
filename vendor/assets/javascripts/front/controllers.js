@@ -63,7 +63,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
                 {
                     id: '3',
                     api_services: "twitter",
-                    icon: "icon-twitte",
+                    icon: "icon-twitter",
                     method: "follow",
                     what: "follow",
                     discount: "15"
