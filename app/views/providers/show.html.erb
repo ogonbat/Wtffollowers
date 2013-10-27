@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @provider.provider %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @provider.uid %>
+</p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @provider.nickname %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @provider.token %>
+</p>
+
+<p>
+  <strong>Secret:</strong>
+  <%= @provider.secret %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>

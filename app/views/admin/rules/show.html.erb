@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @rule.type %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @rule.icon %>
+</p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @rule.method %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @rule.action %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @rule.discount %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rule.user %>
+</p>
+
+<%= link_to 'Edit', edit_rule_path(@rule) %> |
+<%= link_to 'Back', rules_path %>

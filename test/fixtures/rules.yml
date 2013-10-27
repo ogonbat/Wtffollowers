@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  icon: MyString
+  method: MyString
+  action: MyString
+  discount: MyString
+  user_id: 
+
+two:
+  type: 
+  icon: MyString
+  method: MyString
+  action: MyString
+  discount: MyString
+  user_id: 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap 101 Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <%= stylesheet_link_tag "admin/panel", media: "all" %>
+  <%= csrf_meta_tags %>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/html5shiv.js"></script>
+  <script src="../../assets/js/respond.min.js"></script>
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="assets/css/font-awesome-ie7.css">
+  <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WTFF...Admin</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/">Home</a></li>
+        <li><a href="#/rules">Rules</a></li>
+        <li><a href="#/subscriptions">Subscriptions</a></li>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+<div class="container" id="wtfContainer" ng-view>
+</div>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<%= javascript_include_tag "admin/panel" %>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<section class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a href="#/rules" class="btn btn-primary"><i class="icon-plus"></i> Rules</a>
+                <a href="#/subscriptions" class="btn btn-primary"><i class="icon-comments"></i> Manage Subscriptions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Add</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <ul class="add-rules-ul">
+                    <li><span class="add-rules-if">IF</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <ul class="add-rules-ul">
+                    <li ng-click="openTwitterOptions()"><i class="icon-twitter icon-5x"></i></li>
+                    <li><span>OR</span></li>
+                    <li><i class="icon-facebook icon-5x"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- first section for the twitter process -->
+        <div class="row" ng-hide="twitterMethodsSelect">
+            <ul class="col-md-12 col-lg-12 add-rules-ul">
+                <li>
+                    <div class="panel panel-default add-rules-panel">
+                        <div class="panel-body">
+                            <a ng-click="setTwitterMethod('mention')"><h3>Mentions</h3></a>
+                            <p class="add-rules-description">
+                                If the Customer has mentioned your Store Twitter account
+                                will receive a discount of...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel panel-default add-rules-panel">
+                        <div class="panel-body">
+                            <a ng-click="setTwitterMethod('follow')"><h3>Followers</h3></a>
+                            <p class="add-rules-description">
+                                If the Customer follow your twitter account will receive
+                                a discount of...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel panel-default add-rules-panel">
+                        <div class="panel-body">
+                            <a ng-click="setTwitterMethod('hashtag')"><h3>Use #HashTag</h3></a>
+                            <p class="add-rules-description">
+                                Set an #HashTag and if the customer has used this #HasTag
+                                in one or more tweet, will receive a discount of...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- end first section for the twitter process -->
+
+        <!-- hashtag section for the twitter process -->
+        <div class="row" ng-hide="twitterHashTagSelect">
+            <div class="input-group col-md-11 col-lg-11 add-rules-hashtag">
+                <h3>#HashTag</h3>
+                <input type="text" class="form-control"
+                       ng-model="rule.what" placeholder="Enter your HashTag as #YourHashTag">
+                <button class="btn btn-default" ng-click="openDiscount()">Add</button>
+            </div>
+        </div>
+        <!-- end hashtag section for the twitter process -->
+
+
+        <!-- discount percentage section -->
+        <div class="row" ng-hide="discountSelect">
+            <div class="input-group col-md-7 col-lg-7 add-rules-discount">
+                <h3>Discount Percentage</h3>
+                <input type="text" class="form-control"
+                       ng-model="rule.discount" placeholder="Enter the discount">
+                <button class="btn btn-default" ng-click="completeProcess()">Add</button>
+            </div>
+        </div>
+        <!-- end discount percentage section -->
+
+
+    </div>
+</section>

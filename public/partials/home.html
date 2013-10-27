@@ -1,0 +1,99 @@
+<section class="col-md-6 col-lg-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">QR Code Scanner</h3>
+                </div>
+                <div class="panel-body">
+                    <scanner-gun></scanner-gun>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Status Panel</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="#">
+                                <span ng-class="WebCamBadge">{{ WebCamBadgeValue }}</span>
+                                Webcam
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <span ng-class="WebCamBadge">{{ WebCamBadgeValue }}</span>
+                                Motion Detection
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <span ng-class="WebCamBadge">{{ WebCamBadgeValue }}</span>
+                                QR Code Scanner
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+ <section class="col-md-6 col-lg-7">
+     <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Status Scanner</h3>
+                </div>
+                <div class="panel-body">
+                    <p class="text-center"><i ng-class="scanningStatus"></i> {{ scanningMessage }}</p>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-6">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">Total Amount + Discounts</h3>
+                 </div>
+                 <div class="panel-body">
+                     <h3> {{amount.total | currency:"€"}}</h3>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-md-12">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">Amount to Pay</h3>
+                 </div>
+                 <div class="panel-body">
+                     <div class="input-group">
+                         <span class="input-group-addon">€</span>
+                         <input type="text" class="form-control col-md-5 col-lg-5" ng-model="amount.base" ng-change="updateAmount()" placeholder="Enter the amount">
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-md-12">
+             <div class="panel panel-info">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">Discounts</h3>
+                 </div>
+                 <ul class="list-group" ng-repeat="rule in rules">
+                     <li class="list-group-item cursor-hand" ng-class="{'active': isSelected(rule.id)}" ng-click="selectDiscount(rule.id)">
+                         <span class="rules-icon"><i class="{{ rule.icon }} icon-4x"></i></span>
+                         <span class="rules-description">{{ rule.method }}</span>
+                         <span class="rules-discount">{{ rule.discount }}%</span>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+     </div>
+
+ </section>

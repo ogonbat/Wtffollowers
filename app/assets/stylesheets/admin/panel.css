@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require font-awesome
+ *= require_self
+ */
+body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+
+}
+.row{
+    margin-bottom: 20px;
+    line-height: 60px;
+}
+
+.list-text-large{
+    font-size: 2.00em;
+}
+
+.percentage{
+    font-size: 4.00em;
+    font-weight: bold;
+}
+
+/*
+rule index page section
+*/
+.rules-if, .rules-description, .rules-discount{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 60px;
+    margin-left: 25px;
+    margin-bottom: 0;
+}
+.rules-discount{
+    color: #3a87ad;
+}
+.rules-icon{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/*
+List rules
+*/
+li.list-group-item.active > span.rules-discount{
+    color: #FFFFFF;
+}
+
+li.list-group-item > span.rules-icon{
+    display: inline-block;
+}
+li.list-group-item > span.rules-description,
+li.list-group-item > span.rules-discount{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+/*
+Add rules section classes
+*/
+.add-rules-ul li span{
+    font-weight: bold;
+    font-size: 40px;
+    cursor: default;
+}
+.add-rules-ul li span.add-rules-if{
+    font-weight: bold;
+    font-size: 80px;
+    margin-bottom: 0;
+
+}
+.add-rules-ul li div.add-rules-panel{
+    max-width: 300px;
+    max-height: 200px;
+}
+.add-rules-ul li p.add-rules-description{
+    line-height: 20px;
+}
+.add-rules-ul{
+    margin: 0;
+}
+.add-rules-ul li{
+    display: inline-block;
+    margin-right: 25px;
+    cursor: pointer;
+}
+div.add-rules-hashtag, div.add-rules-discount {
+    padding-left: 45px;
+}
+div.add-rules-hashtag h3, div.add-rules-discount h3{
+    font-weight: bold;
+    font-size: 40px;
+}
+div.add-rules-hashtag input, div.add-rules-discount input{
+    height: 90px;
+    font-size: 50px;
+}
+
+/*
+Generic classes
+*/
+.cursor-hand{
+    cursor: pointer;
+}
+p.lead{
+    line-height: 0px;
+    margin-left: 25px;
+}
+.icon-twitter{
+    color: #9AE4E8;
+}
+.icon-facebook{
+    color: #3b5998;
+}
+.selected{
+    background-color: green;
+}

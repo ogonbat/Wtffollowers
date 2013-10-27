@@ -1,0 +1,35 @@
+<section class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a href="#/rules/add" class="btn btn-primary"><i class="icon-plus"></i> Add Rule</a>
+                <a href="#/subscriptions" class="btn btn-primary"><i class="icon-comments"></i> Manage Subscriptions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Rules</h3>
+    </div>
+    <div class="panel-body" ng-repeat="rule in rules">
+        <div class="row">
+            <div class="col-md-9">
+                <span class="rules-if">IF</span>
+                <span class="rules-icon"><i class="{{rule.icon}} icon-5x"></i></span>
+                <span class="rules-description">THEN</span>
+                <span class="rules-discount">{{ rule.discount }}%</span>
+                <p class="lead">If {{ rule.api_services }} {{ rule.what }} then {{ rule.discount}}%</p>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-default btn-lg">
+                    <i class="icon-trash icon-3x"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-lg">
+                    <i class="icon-pencil icon-3x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
