@@ -42,6 +42,34 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
         };
         $scope.$on('webcamInactive',webcamFailure);
         $scope.makingCall = false;
+        $scope.addDiscountSurprise = function(){
+            $scope.rules = [
+                {
+                    id: '1',
+                    api_services: "twitter",
+                    icon: "icon-twitter",
+                    method: "mention",
+                    what: "mention",
+                    discount: "10"
+                },
+                {
+                    id: '2',
+                    api_services: "twitter",
+                    icon: "icon-twitter",
+                    method: "hashtag",
+                    what: "#WtDDisrupt ",
+                    discount: "5"
+                },
+                {
+                    id: '3',
+                    api_services: "twitter",
+                    icon: "icon-twitte",
+                    method: "follow",
+                    what: "follow",
+                    discount: "15"
+                }
+            ];
+        };
         var motionDetected = function(data){
             $timeout.cancel(scanTimeout);
             $scope.scanningStatus = "icon-spinner icon-spin icon-2x";
@@ -50,35 +78,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
                 $scope.scanningStatus = "icon-pause icon-2x";
                 $scope.scanningMessage = "Waiting Motion";
             }, 3000);
-            if($scope.makingCall == false){
-                $scope.rules = [
-                    {
-                        id: '1',
-                        api_services: "twitter",
-                        icon: "icon-twitter",
-                        method: "mention",
-                        what: "mention",
-                        discount: "10"
-                    },
-                    {
-                        id: '2',
-                        api_services: "twitter",
-                        icon: "icon-twitter",
-                        method: "hashtag",
-                        what: "#WtDDisrupt ",
-                        discount: "5"
-                    },
-                    {
-                        id: '3',
-                        api_services: "twitter",
-                        icon: "icon-twitte",
-                        method: "follow",
-                        what: "follow",
-                        discount: "15"
-                    }
-                ];
-                $scope.makingCall = true;
-            }
+
 
 //            if($scope.makingCall == false){
 //                $scope.makingCall = true;
