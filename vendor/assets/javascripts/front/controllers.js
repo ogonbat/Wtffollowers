@@ -91,6 +91,8 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
                     if (data.result == true){
                         console.log(data.code);
                     }
+                }).error(function(data){
+                        $scope.makingCall = false;
                 });
             }
 
