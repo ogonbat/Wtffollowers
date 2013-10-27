@@ -86,12 +86,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
             }, 3000);
             $http.post('/admin/panel/scanner',{params:{photo:$scope.image_scanner}}).success(function(data){
                 if (data.result == true){
-                    if($scope.scanned !== data.code){
-                        $scope.scanned = data.code;
-                        $http.get('/admin/discounts/check',{params:{customer_id: data.code}}).success(function(data){
-                            console.log(data.code);
-                        });
-                    }
+                    console.log(data.code);
                 }
             });
           console.log("broadcast motion detected");
