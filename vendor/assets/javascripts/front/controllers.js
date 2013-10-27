@@ -75,7 +75,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
             $scope.WebCamBadgeValue = "inactive";
         };
         $scope.$on('webcamInactive',webcamFailure);
-        $scope.makingCall = "start";
+        $scope.makingCall = false;
         var motionDetected = function(data){
             $timeout.cancel(scanTimeout);
             $scope.scanningStatus = "icon-spinner icon-spin icon-2x";
