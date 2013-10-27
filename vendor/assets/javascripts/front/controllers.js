@@ -21,40 +21,6 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
         };
         $scope.selected = [];
 
-        $scope.rules = [
-            {
-                id: '6456465334',
-                api_services: "twitter",
-                icon: "icon-twitter",
-                method: "mention",
-                what: "mention",
-                discount: "25"
-            },
-            {
-                id: '6456465335',
-                api_services: "twitter",
-                icon: "icon-twitter",
-                method: "hashtag",
-                what: "#PruebaBellissima",
-                discount: "25"
-            },
-            {
-                id: '6456465336',
-                api_services: "facebook",
-                icon: "icon-facebook",
-                method: "like",
-                what: "like",
-                discount: "15"
-            },
-            {
-                id: '6456465337',
-                api_services: "twitter",
-                icon: "icon-twitter",
-                method: "follow",
-                what: "follow",
-                discount: "5"
-            }
-        ];
         $scope.WebCamBadge = "label label-danger pull-right";
         $scope.WebCamBadgeValue = "inactive";
 
@@ -85,16 +51,46 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
                 $scope.scanningMessage = "Waiting Motion";
             }, 3000);
             if($scope.makingCall == false){
-                $scope.makingCall = true;
-                $http.post('/admin/panel/scanner',{params:{photo:$scope.image_scanner}}).success(function(data){
-                    $scope.makingCall = false;
-                    if (data.result == true){
-                        console.log(data.code);
+                $scope.rules = [
+                    {
+                        id: '1',
+                        api_services: "twitter",
+                        icon: "icon-twitter",
+                        method: "mention",
+                        what: "mention",
+                        discount: "10"
+                    },
+                    {
+                        id: '2',
+                        api_services: "twitter",
+                        icon: "icon-twitter",
+                        method: "hashtag",
+                        what: "#WtDDisrupt ",
+                        discount: "5"
+                    },
+                    {
+                        id: '3',
+                        api_services: "twitter",
+                        icon: "icon-twitte",
+                        method: "follow",
+                        what: "follow",
+                        discount: "15"
                     }
-                }).error(function(data){
-                        $scope.makingCall = false;
-                });
+                ];
+                $scope.makingCall = true;
             }
+
+//            if($scope.makingCall == false){
+//                $scope.makingCall = true;
+////                $http.post('/admin/panel/scanner',{params:{photo:$scope.image_scanner}}).success(function(data){
+////                    $scope.makingCall = false;
+////                    if (data.result == true){
+////                        console.log(data.code);
+////                    }
+////                }).error(function(data){
+////                        $scope.makingCall = false;
+////                });
+//            }
 
           console.log("broadcast motion detected");
         };

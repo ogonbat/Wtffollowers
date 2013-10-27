@@ -54,14 +54,11 @@ class Admin::ScannerController < ApplicationController
           end
           puts final_rule
           render json: {result: true, data: final_rule}
-        else
-          render json: {result: false}
         end
       rescue NoMethodError => e
         render json: {result: false}
       end
     end
-    render json: {result: false}
   end
 
   private
