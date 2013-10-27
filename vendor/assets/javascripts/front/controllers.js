@@ -75,7 +75,7 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
             $scope.WebCamBadgeValue = "inactive";
         };
         $scope.$on('webcamInactive',webcamFailure);
-        $scope.makingCall = false;
+        $scope.makingCall = "start";
         var motionDetected = function(data){
             $timeout.cancel(scanTimeout);
             $scope.scanningStatus = "icon-spinner icon-spin icon-2x";
@@ -87,8 +87,8 @@ wtffControllers.controller('HomeController', ['$scope', '$http','$timeout','$fil
             if($scope.makingCall == false){
                 $scope.makingCall = true;
                 $http.post('/admin/panel/scanner',{params:{photo:$scope.image_scanner}}).success(function(data){
+                    $scope.makingCall = false;
                     if (data.result == true){
-                        $scope.makingCall = false;
                         console.log(data.code);
                     }
                 });

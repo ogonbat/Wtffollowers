@@ -52,6 +52,7 @@ class Admin::ScannerController < ApplicationController
               end
             end
           end
+          puts final_rule
           render json: {result: true, data: final_rule}
         else
           render json: {result: false}
